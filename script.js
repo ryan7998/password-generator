@@ -1,33 +1,56 @@
 // Assignment code here
+// function to generate password:
 function generatePassword(){
+  
+  // Declare variables:
   var lowerCase, upperCase, numericValue, spCharacter;
   var length = prompt("Length of password");
+
+  // Check if input is between 8 to 128:
   if(length >= 8 && length <= 128){
+
+    // Declare empty String charSet to contain password set:
     var charSet = "";
+
+    //Promt user either to select lowercase or not.
+    //If Lower case is selected, add lowercase alphabets to the variable charSet
+    // else Charset remains empty: 
     if(lowerCase = window.confirm("Do you  want the password to contain lowercase")){
       charSet = "abcdefghijklmnopqrstuvwxyz";
     }
+    //If Upper Case is selected, add uppercase alphabets to the charSet:
     if(upperCase = window.confirm("Do you  want the password to contain UPPERCASE")){
       charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
+    //If Numeric Calue is selcted, add numbers to charSet:
     if(numericValue = window.confirm("Do you  want the password to contain Numeric Value")){
       charSet += "0123456789";
     }
+    //If special Characters are selected, add those to the charSet:
+    // Double quote concatenated with \:
     if(spCharacter = window.confirm("Do you  want the password to contain Special Character")){
       charSet += "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
     }
 
-    console.log(charSet);
-    // debugger;
-    //var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    //If None is selected alert users to select atleast one type:
+    if(!lowerCase && !upperCase && !numericValue && !spCharacter){
+      alert("You must choose alteast one of the following: lowercase, uppercase, numeric value, special character");
+    }
+
+    //Declare empty string variable to containt the string:
     var retVal = "";
     
+    // Create a loop and run for the length selected by the user
+    // Initialized i to 0 and n to the length of the charSet
+    // Run loop till length is reached
+    // Add each value to retVal in each loop
     for(var i = 0, n = charSet.length; i < length; ++i) {
       retVal += charSet.charAt(Math.floor(Math.random() * n));
     }
     return retVal;
-    //  console.log(charset.charAt(1));
   }else{
+
+    // If lenght of password inputted is less than 8 or greater than 128 exit the code.
     window.alert("Length must be between 8 and 128");
   }
 
