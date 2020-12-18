@@ -1,17 +1,20 @@
 // Assignment code here
 function generatePassword(){
-  var lowerCase, upperCase, numericValue;
+  var lowerCase, upperCase, numericValue, spCharacter;
   var length = prompt("Length of password");
   if(length >= 8 && length <= 128){
     var charSet = "";
-    if(lowerCase = window.confirm("Do you  want the password to contain lowercase ")){
+    if(lowerCase = window.confirm("Do you  want the password to contain lowercase")){
       charSet = "abcdefghijklmnopqrstuvwxyz";
     }
-    if(upperCase = window.confirm("Do you  want the password to contain UPPERCASE ")){
+    if(upperCase = window.confirm("Do you  want the password to contain UPPERCASE")){
       charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
-    if(numericValue = window.confirm("Do you  want the password to contain Numeric Value ")){
+    if(numericValue = window.confirm("Do you  want the password to contain Numeric Value")){
       charSet += "0123456789";
+    }
+    if(spCharacter = window.confirm("Do you  want the password to contain Special Character")){
+      charSet += "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
     }
 
     console.log(charSet);
