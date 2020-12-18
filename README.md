@@ -11,3 +11,5 @@
 ## variable charSet will add values depending on the type chosen
 
 ## If none of the following: lowercase, uppercase, numeric value or / and special characters, is chosen, the program will give an alert box and also display message that you must choose any of the values to generate password.
+
+link to the site: https://ryan7998.github.io/password-generator/
